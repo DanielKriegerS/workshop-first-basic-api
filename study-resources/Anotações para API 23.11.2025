@@ -1,0 +1,69 @@
+Estudos API Java Spring, continuação da conversa (16.11.2025):
+
+Revisão do que foi visto
+	> TEORIA <
+ - O que é uma API;
+ - Spring initializr;
+ - Spring x Springboot;
+ - Comunicação de APIs (no nosso caso, HTTP);
+ - Métodos HTTP > GET, GET ALL, POST, PUT, DELETE, PATCH;
+ - Transporte de informações (no nosso caso, JSON);
+ - Arquitetura em camadas 
+	*	Entidade > Repository > Service > Controller.
+	** 	Entidade 	= constituído por um conjunto de dados que estão interligados;
+	** 	Repository	= meio de comunicação com a Base de Dados;
+	** 	Service		= lógica de processamento principal da aplicação, recebe a informação e utiliza as camadas anteriores para processar.
+	** 	Controller	= recepção das informações do client-side.
+ - Função das anotações;
+	
+	> PRÁTICA <
+ - Implementação da entidade Product básica (utilização do UUID + Construtores + Getters & Setters);
+ - Implementação do repository de Product básico (@Repository + extends JpaRepository<Table, ID>);
+ - Criação do service de Product + GET ALL method;
+ - Criação do controller de Product + GET ALL endpoint;
+	*	O que é um endpoint?
+	*	Validação do funcionamento do endpoint (acessar o endpoint no navegador).
+	
+Novos conteúdos
+	> TEORIA <
+ - Banco H2, em memória;
+	* Configuração do banco H2;
+	**	application.properties (propriedades da aplicação).
+			spring.application.name=MarketList
+			
+			# Access config
+			spring.datasource.url=jdbc:h2:~/product
+			spring.datasource.username=product
+			spring.datasource.password=product
+			
+			# Config do Hibernate (JPA)
+			spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+			spring.jpa.hibernate.ddl-auto=update
+			spring.jpa.open-in-view=false
+			
+			# driver H2
+			spring.datasource.driverClassName=org.h2.Driver
+			
+			# Console H2
+			spring.h2.console.enabled=true
+			spring.h2.console.path=/h2-console
+	> PRÁTICA <
+ - Acessar H2;
+	* Gerar um Product.
+ - Acessar novamente o endpoint GET ALL;
+ - Implementar método excluir + endpoint DELETE (esse delete é por ID);
+ - Deletar Product criado;
+	* Validar acessando novamente GET ALL;
+ - Implementar método create + endpoint POST;
+ - Implementar método update + endpoint PUT;
+ - Implementar método get {id} + endpoint GET BY ID;
+ - Executar testes unitários da API;
+ 
+	> EXTRA <
+ - Implementar validações;
+	* Onde seria o melhor ponto para validar Product? (SRP)
+--------------->> 23.11.2025 acabou aqui. 
+ 
+ - Implementar DTOs;
+	* O que é um DTO? Por que usar Records?
+ - APIs REST X RESTful (pesquisar);

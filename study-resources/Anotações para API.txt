@@ -1,0 +1,36 @@
+API - Application Programming Interface:
+
+Frontend -> API -> Banco de Dados
+Banco de dados -> API -> Frontend
+
+Request 	> Solicitação recebida
+Responses 	> Resposta enviada
+
+Protocolo HTTP.
+
+Header 	> tipo de solicitação (e mais informações)
+Body	> informações a serem processadas
+
+JSON:
+
+{
+	"id" : "123",
+	"name" : "Daniel"
+}
+
+Spring initializr: https://start.spring.io/
+
+Product
+	- id
+	- name
+	- productValue
+	
+	validations
+	
+Endpoints: 
+/products		-> GET ALL, POST
+/product/id		-> GET BY ID, PUT, DELETE
+
+Repositório do projeto: https://github.com/DanielKriegerS/workshop-first-basic-api
+
+SRP = Single Reponsability Principle
