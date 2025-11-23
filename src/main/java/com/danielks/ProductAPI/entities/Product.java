@@ -45,4 +45,20 @@ public class Product {
         this.productValue = productValue;
     }
 
+    private void validateName() {
+        if (name == null || name.trim().isEmpty()) {
+            throw new RuntimeException("Product name cannot be null or empty");
+        }
+    }
+
+    private void validateProductValue() {
+        if (productValue == null || productValue < 0) {
+            throw new RuntimeException("Product value cannot be null or negative");
+        }
+    }
+
+    public void validate() {
+        validateName();
+        validateProductValue();
+    }
 }
