@@ -12,9 +12,12 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private final UUID id;
-    private final String name;
-    private final Double productValue;
+    private UUID id;
+    private String name;
+    private Double productValue;
+
+    public Product() {
+    }
 
     public Product(UUID id, String name, Double productValue) {
         this.id = id;
@@ -33,4 +36,13 @@ public class Product {
     public Double getProductValue() {
         return productValue;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProductValue(Double productValue) {
+        this.productValue = productValue;
+    }
+
 }
